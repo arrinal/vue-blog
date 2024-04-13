@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-3xl font-bold md:text-4xl lg:text-5xl;
+  }
+  h2 {
+    @apply text-2xl font-semibold md:text-3xl lg:text-4xl;
+  }
+  h3 {
+    @apply text-xl font-semibold md:text-2xl lg:text-3xl;
+  }
+  h4 {
+    @apply text-lg font-semibold md:text-xl lg:text-2xl;
+  }
+  h5 {
+    @apply text-base font-medium;
+  }
+}
+
+#app {
+  font-family: "SF Mono", Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+nav {
+  padding: 30px;
+}
+
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+nav a.router-link-exact-active {
+  color: #42b983;
+}
+
+body {
+  font-size: 12px;
+}
