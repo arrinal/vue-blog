@@ -1,26 +1,26 @@
 <template>
   <div class="home">
-    <div class="flex justify-center">
-      <img class="h-auto max-w-full" alt="Vue logo" src="../assets/logo.png" />
+    <div v-for="preview in previews" :key="preview.id">
+      <PostPreview :title="preview.attributes.title" :link="'/#/content/' + preview.id" :date="formatDate(preview.attributes.publishedAt)" :imageSrc="'http://localhost:1337' + preview.attributes.cover.data.attributes.formats.thumbnail.url"/>
     </div>
-    <button class="btn">Hello daisyui</button>
-    <div v-for="article in articles" :key="article.id">
-      <h2>{{ article.attributes.title }}</h2>
-      <p class="text-base-content">{{ article.attributes.content }}</p>
-    </div>
+    <div class="mx-auto flex max-w-4xl border-x-2 border-t-2 border-dotted border-lime-600 text-base-content"></div>
+    <div class="mx-auto flex max-w-4xl border-x-2 border-t-2 border-dotted border-lime-600 text-base-content"></div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import axios from "axios";
+import PostPreview from "../components/PostPreview.vue";
 
 export default {
   name: "HomeView",
-  components: {},
+  components: {
+    PostPreview,
+  },
   data() {
     return {
-      articles: [],
+      previews: [],
     };
   },
   created() {
@@ -28,15 +28,26 @@ export default {
   },
   methods: {
     fetchArticles() {
-      axios
-        .get("http://localhost:1337/api/articles")
+      axios.get("http://localhost:1337/api/previews?populate=*")
         .then((response) => {
-          this.articles = response.data.data;
+          this.previews = response.data.data;
         })
         .catch((error) => {
           console.log("Error fetching articles:", error);
         });
     },
+    formatDate(dateString) {
+      const date = new Date(dateString);
+      return new Intl.DateTimeFormat('en-UK', {
+        day: '2-digit',
+        month: 'long',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+      }).format(date);
+    }
   },
 };
 </script>
