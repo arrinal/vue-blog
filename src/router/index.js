@@ -9,6 +9,11 @@ const routes = [
     component: HomeView,
   },
   {
+    path: '/:page(\\d+)',
+    name: 'home-page',
+    component: HomeView
+  },
+  {
     path: "/content/:id",
     name: "content",
     component: ContentView,
