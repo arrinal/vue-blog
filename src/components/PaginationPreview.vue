@@ -1,7 +1,7 @@
 <template>
   <div class="btn-group">
     <button v-for="page in pagesToShow" :key="page"
-      :class="{ 'btn-active': page === currentPage, 'btn-inactive': page !== currentPage }" class="btn m-1 mt-4"
+      :class="{ 'btn-active': page === currentPage, 'btn-inactive': page !== currentPage }" class="btn btn-sm rounded-none m-1 mt-4"
       @click.prevent="goToPage(page)">
       {{ page }}
     </button>
@@ -34,10 +34,10 @@ export default {
 
 <style scoped>
 .btn-active {
-  @apply cursor-not-allowed pointer-events-none;
+  @apply cursor-not-allowed pointer-events-none bg-green-500 text-black;
 }
 
 .btn-inactive {
-  @apply opacity-50;
+  @apply opacity-50 hover:text-white;
 }
 </style>
