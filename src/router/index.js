@@ -1,6 +1,7 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import ContentView from "@/views/ContentView.vue";
+import ErrorView from "@/views/ErrorView.vue";
 
 const routes = [
   {
@@ -17,6 +18,11 @@ const routes = [
     path: "/content/:id",
     name: "content",
     component: ContentView,
+  },
+  {
+    path: "/:catchAll(.*)*", // Capture routes yang gak match
+    name: 'NotFound',
+    component: ErrorView
   },
   {
     path: "/about",
