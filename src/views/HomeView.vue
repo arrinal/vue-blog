@@ -1,15 +1,20 @@
 <template>
   <div class="home">
     <div v-for="preview in previews" :key="preview.id">
-      <PostPreview :title="preview.attributes.title" :link="'/#/content/' + preview.id" :date="formatDate(preview.attributes.publishedAt)" :imageSrc="preview.attributes.cover.data ? 'https://backoffice.arrinal.com' + preview.attributes.cover.data.attributes.formats.thumbnail.url : 'https://backoffice.arrinal.com/uploads/thumbnail_default_thumbnail_b3c4dd1c13.jpg'" />
+      <PostPreview :title="preview.attributes.title" :link="'/#/content/' + preview.id"
+        :date="formatDate(preview.attributes.publishedAt)"
+        :imageSrc="preview.attributes.cover.data ? 'https://backoffice.arrinal.com' + preview.attributes.cover.data.attributes.formats.thumbnail.url : 'https://backoffice.arrinal.com/uploads/thumbnail_default_thumbnail_b3c4dd1c13.jpg'" />
     </div>
-    <div class="mx-auto flex max-w-4xl border-x-2 border-t-2 border-dotted border-lime-600 text-base-content"></div>
-    <div class="mx-auto flex max-w-4xl border-x-2 border-t-2 border-dotted border-lime-600 text-base-content"></div>
+    <div v-if="previews.length > 0">
+      <div class="mx-auto flex max-w-4xl border-x-2 border-t-2 border-dotted border-lime-600 text-base-content"></div>
+      <div class="mx-auto flex max-w-4xl border-x-2 border-t-2 border-dotted border-lime-600 text-base-content"></div>
+    </div>
     <div>
       <ul>
         <li v-for="article in articles" :key="article.id">{{ article.title }}</li>
       </ul>
-      <PaginationPreview :currentPage="currentPage" :totalPages="totalPages" :pagesToShow="pagesToShow" @change-page="fetchArticles" />
+      <PaginationPreview :currentPage="currentPage" :totalPages="totalPages" :pagesToShow="pagesToShow"
+        @change-page="fetchArticles" />
     </div>
   </div>
 </template>

@@ -21,7 +21,7 @@
 }
 
 #app {
-  font-family: "SF Mono", Avenir, Helvetica, Arial, sans-serif;
+  font-family: "SF Mono";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -43,4 +43,89 @@ nav a.router-link-exact-active {
 
 body {
   font-size: 14px;
+}
+
+
+@font-face {
+  font-family: "SF Mono";
+  src: url('~@/assets/fonts/SF-Mono-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SF Mono";
+  src: url('~@/assets/fonts/SF-Mono-RegularItalic.otf') format('opentype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "SF Mono";
+  src: url('~@/assets/fonts/SF-Mono-Medium.otf') format('opentype');
+  font-weight: 500; /* 500 is commonly used for Medium */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SF Mono";
+  src: url('~@/assets/fonts/SF-Mono-MediumItalic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "SF Mono";
+  src: url('~@/assets/fonts/SF-Mono-Semibold.otf') format('opentype');
+  font-weight: 600; /* 600 is commonly used for Semibold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SF Mono";
+  src: url('~@/assets/fonts/SF-Mono-SemiboldItalic.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "SF Mono";
+  src: url('~@/assets/fonts/SF-Mono-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SF Mono";
+  src: url('~@/assets/fonts/SF-Mono-BoldItalic.otf') format('opentype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "SF Mono";
+  src: url('~@/assets/fonts/SF-Mono-Heavy.otf') format('opentype');
+  font-weight: 800; /* 800 is commonly used for Heavy */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SF Mono";
+  src: url('~@/assets/fonts/SF-Mono-HeavyItalic.otf') format('opentype');
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "SF Mono";
+  src: url('~@/assets/fonts/SF-Mono-Light.otf') format('opentype');
+  font-weight: 300; /* 300 is commonly used for Light */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SF Mono";
+  src: url('~@/assets/fonts/SF-Mono-LightItalic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
 }
