@@ -47,7 +47,7 @@ export default {
     fetchArticles() {
       const articleId = this.$route.params.id;
       axios
-        .get(`http://localhost:1337/api/articles/${articleId}?populate=tags`)
+        .get(`https://backoffice.arrinal.com/api/articles/${articleId}?populate=tags`)
         .then((response) => {
           this.article = response.data.data;
           this.tags = this.article.attributes.tags.data;

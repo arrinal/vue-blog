@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div v-for="preview in previews" :key="preview.id">
-      <PostPreview :title="preview.attributes.title" :link="'/#/content/' + preview.id" :date="formatDate(preview.attributes.publishedAt)" :imageSrc="preview.attributes.cover.data ? 'http://localhost:1337' + preview.attributes.cover.data.attributes.formats.thumbnail.url : 'http://localhost:1337/uploads/thumbnail_app_icon_08d147567a.png'" />
+      <PostPreview :title="preview.attributes.title" :link="'/#/content/' + preview.id" :date="formatDate(preview.attributes.publishedAt)" :imageSrc="preview.attributes.cover.data ? 'https://backoffice.arrinal.com' + preview.attributes.cover.data.attributes.formats.thumbnail.url : 'https://backoffice.arrinal.com/uploads/thumbnail_default_thumbnail_b3c4dd1c13.jpg'" />
     </div>
     <div class="mx-auto flex max-w-4xl border-x-2 border-t-2 border-dotted border-lime-600 text-base-content"></div>
     <div class="mx-auto flex max-w-4xl border-x-2 border-t-2 border-dotted border-lime-600 text-base-content"></div>
@@ -64,7 +64,7 @@ export default {
     async fetchArticles() {
       const page = parseInt(this.$route.params.page) || 1;
       try {
-        const response = await axios.get("http://localhost:1337/api/previews?populate=*&sort=publishedAt:desc", {
+        const response = await axios.get("https://backoffice.arrinal.com/api/previews?populate=*&sort=publishedAt:desc", {
           params: {
             pagination: {
               page: page,
