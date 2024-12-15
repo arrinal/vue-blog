@@ -1,5 +1,5 @@
 <template>
-  <img class="h-32 w-64 rounded-2xl object-cover" :src="imageSrc" alt="logo" />
+  <img :src="imageSrc" :alt="imageSrc" class="rounded-lg object-cover sm:h-32 sm:w-64" />
 </template>
 
 <script>

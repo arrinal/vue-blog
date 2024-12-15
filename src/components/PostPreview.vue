@@ -1,9 +1,9 @@
 <template>
-  <div class="mx-auto flex max-w-4xl border-x-2 border-t-2 border-dotted border-lime-600 text-base-content">
-    <div class="border-x-2 border-t-2 border-dotted border-lime-600 p-4">
+  <div class="mx-auto grid max-w-4xl grid-cols-[160px_1fr] border-x-2 border-t-2 border-dotted border-lime-600 text-base-content sm:grid-cols-[256px_1fr]">
+    <div class="flex items-center justify-center border-x-2 border-t-2 border-dotted border-lime-600 p-4">
       <RoundedImage :imageSrc="imageSrc" />
     </div>
-    <div class="flex flex-grow flex-col justify-between border-x-2 border-t-2 border-dotted border-lime-600 p-4 text-left">
+    <div class="flex flex-col justify-between border-x-2 border-t-2 border-dotted border-lime-600 p-4 text-left">
       <a :href="link" class="line-clamp-3 hover:text-lime-200">{{ title }}</a>
       <div class="flex">
         <span>{{ date }}</span>
